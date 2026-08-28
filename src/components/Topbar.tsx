@@ -20,24 +20,15 @@ const Brand = styled(NavLink)`
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  letter-spacing: -.04em;
-  line-height: .88;
-  text-transform: uppercase;
 `
 
-const Mark = styled.span`
-  width: 43px;
-  height: 32px;
-  position: relative;
-  display: inline-block;
-  &::before, &::after { content: ""; position: absolute; background: var(--ink); }
-  &::before { width: 38px; height: 19px; border-radius: 48% 48% 55% 55%; left: 2px; top: 8px; }
-  &::after { width: 14px; height: 14px; transform: rotate(45deg); left: 2px; top: 2px; box-shadow: 20px -20px 0 var(--ink); }
+const Logo = styled.img`
+  display: block;
+  width: clamp(138px, 16vw, 190px);
+  height: auto;
+  object-fit: contain;
 `
 
-const BrandText = styled.span`font-size: 15px; max-width: 92px;`
 const Nav = styled.nav<{ $open: boolean }>`
   display: flex; gap: 34px; align-items: center;
   a { text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: .13em; font-weight: 750; padding: 10px 0; position: relative; }
@@ -48,6 +39,7 @@ const Nav = styled.nav<{ $open: boolean }>`
     background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 18px;
   }
 `
+
 const Menu = styled.button`
   display: none; border: 0; background: transparent; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; font-size: 11px;
   @media (max-width: 650px) { display: block; }
@@ -55,8 +47,11 @@ const Menu = styled.button`
 
 export function Topbar() {
   const [open, setOpen] = useState(false)
+
   return <Header>
-    <Brand to="/" onClick={() => setOpen(false)} aria-label="Raccoons at Work Studios home"><Mark /><BrandText>Raccoons at Work Studios</BrandText></Brand>
+    <Brand to="/" onClick={() => setOpen(false)} aria-label="Raccoons at Work Studios home">
+      <Logo src="/assets/logo.png" alt="Raccoons at Work Studios" />
+    </Brand>
     <Menu onClick={() => setOpen(v => !v)} aria-expanded={open}>Menu</Menu>
     <Nav $open={open}>
       <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
