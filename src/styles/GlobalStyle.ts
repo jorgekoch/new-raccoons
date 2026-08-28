@@ -14,6 +14,9 @@ export const GlobalStyle = createGlobalStyle`
     --sand: #ddd1bd;
     --sage: #cbd1bd;
     --peach: #e7c8ad;
+    --coral: #ff896d;
+    --mint: #b7dfd0;
+    --sun: #f4c95d;
     --line: rgba(37, 35, 31, .14);
   }
 
@@ -33,6 +36,6 @@ export const GlobalStyle = createGlobalStyle`
   button, input, textarea { font: inherit; }
   button, a { -webkit-tap-highlight-color: transparent; }
   a { color: inherit; }
-  main { min-height: calc(100vh - 92px); }
+  main { min-height: calc(100vh - 82px); }
   ::selection { background: var(--sage); color: var(--ink); }
 `

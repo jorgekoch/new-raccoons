@@ -1,29 +1,16 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const Page = styled.section`max-width: 1240px; margin: 0 auto; padding: clamp(70px, 10vw, 140px) clamp(24px, 6vw, 80px);`
+const Page = styled.section`max-width: 1360px; margin: 0 auto; padding: clamp(70px, 10vw, 140px) clamp(24px, 6vw, 84px);`
 const Eyebrow = styled.p`margin: 0 0 20px; text-transform: uppercase; letter-spacing: .18em; font-size: 11px; font-weight: 850; color: var(--muted);`
 const Title = styled.h1`font-size: clamp(58px, 11vw, 150px); letter-spacing: -.075em; line-height: .78; margin: 0; text-transform: uppercase;`
-const Intro = styled.p`font-size: clamp(23px, 3.2vw, 43px); line-height: 1.08; letter-spacing: -.035em; font-weight: 650; max-width: 980px; margin: clamp(52px, 8vw, 100px) 0 0;`
-const Grid = styled.div`
-  display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(40px, 8vw, 120px); margin-top: clamp(70px, 10vw, 130px); border-top: 1px solid var(--line); padding-top: 32px;
-  @media(max-width: 760px){ grid-template-columns: 1fr; }
-`
-const Label = styled.div`font-size: 12px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase;`
-const Copy = styled.div`
-  p { margin: 0 0 28px; font-size: clamp(17px, 1.65vw, 21px); line-height: 1.65; color: #49453f; }
-  strong { color: var(--ink); }
-`
-const Tags = styled.div`display: flex; flex-wrap: wrap; gap: 9px; margin-top: 40px; span { padding: 9px 13px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; font-weight: 750; }`
+const Intro = styled.p`font-size: clamp(24px, 3.5vw, 48px); line-height: 1.05; letter-spacing: -.04em; font-weight: 650; max-width: 1050px; margin: clamp(52px, 8vw, 100px) 0 0;`
+const Grid = styled.div`display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(40px, 8vw, 120px); margin-top: clamp(70px, 10vw, 130px); border-top: 1px solid var(--line); padding-top: 28px; @media(max-width: 760px){ grid-template-columns: 1fr; }`
+const Label = styled.div`font-size: 11px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase;`
+const Copy = styled.div`p { margin: 0 0 28px; font-size: clamp(17px, 1.65vw, 21px); line-height: 1.62; color: #49453f; } strong { color: var(--ink); }`
+const Principles = styled.div`display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: clamp(70px, 11vw, 140px); @media(max-width: 740px){ grid-template-columns: 1fr; } div { min-height: 270px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; background: var(--paper); border: 1px solid var(--line); } span { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; font-weight: 850; } h2 { margin: 0; font-size: clamp(29px, 3vw, 43px); letter-spacing: -.055em; line-height: .88; text-transform: uppercase; } div:nth-child(2) { background: var(--mint); } div:nth-child(3) { background: var(--coral); }`
+const End = styled.div`margin-top: clamp(70px, 11vw, 140px); padding-top: 28px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: end; gap: 28px; h2 { max-width: 760px; margin: 0; font-size: clamp(40px, 6vw, 79px); line-height: .84; letter-spacing: -.07em; text-transform: uppercase; } a { flex: none; padding: 16px 20px; background: var(--ink); color: var(--paper); border-radius: 999px; text-decoration: none; text-transform: uppercase; font-size: 10px; letter-spacing: .12em; font-weight: 850; } @media(max-width: 630px){ display: block; a { display: inline-block; margin-top: 25px; } }`
 
 export function About() {
-  return <Page>
-    <Eyebrow>Meet the cooperative</Eyebrow><Title>About us</Title>
-    <Intro><em>A diverse gamedev cooperative crafting authentic original IPs and providing expert outsourcing for the indie community.</em></Intro>
-    <Grid><Label>What moves us</Label><Copy>
-      <p>As a studio, we want to create games that make sense to us as developers—games that entertain us and speak to the core of every team member. We aim to build projects that reflect our identity and embrace our unique style, whether in art or gameplay.</p>
-      <p>Our studio operates as a <strong>cooperative</strong>, focused on diversity and providing a welcoming environment for artists, programmers, animators, and all creators alike, both in our projects and our workplace.</p>
-      <p>While our primary focus is on original IPs, we also provide outsourcing services for other indie companies in <strong>Art, TechArt, and Programming.</strong></p>
-      <Tags><span>Original IPs</span><span>Art</span><span>TechArt</span><span>Programming</span></Tags>
-    </Copy></Grid>
-  </Page>
+  return <Page><Eyebrow>Meet the cooperative</Eyebrow><Title>About us</Title><Intro>We are a diverse gamedev cooperative crafting authentic original IPs and providing expert support for the indie community.</Intro><Grid><Label>What moves us</Label><Copy><p>We make games that entertain us and speak to the core of every person on the team. Each project should carry a recognizable point of view—in its art, its systems and the feeling it leaves behind.</p><p>Our studio operates as a <strong>cooperative</strong>: a welcoming, horizontal space for artists, programmers, animators and every kind of creator.</p><p>While original IPs are our north star, we also join fellow indie teams when they need thoughtful help in <strong>Art, TechArt and Programming.</strong></p></Copy></Grid><Principles><div><span>01</span><h2>Make it meaningful.</h2></div><div><span>02</span><h2>Build it together.</h2></div><div><span>03</span><h2>Leave room for surprise.</h2></div></Principles><End><h2>Have a project that needs a few more paws?</h2><Link to="/contact">Work with us ↗</Link></End></Page>
 }
